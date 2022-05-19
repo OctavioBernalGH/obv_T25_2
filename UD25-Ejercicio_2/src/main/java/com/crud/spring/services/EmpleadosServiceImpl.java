@@ -36,7 +36,7 @@ public class EmpleadosServiceImpl implements EmpleadosService {
 	/** Método para buscar un empleado por el DNI */
 	@Override
 	public Empleados buscarEmpleadoId(String dni) {
-		return empleadosDAO.getById(dni);
+		return empleadosDAO.findById(dni).get();
 	}
 
 	/** Método para listar empleados por nombre */

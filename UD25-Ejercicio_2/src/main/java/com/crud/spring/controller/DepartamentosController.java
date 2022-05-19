@@ -51,14 +51,14 @@ public class DepartamentosController {
 
 	/** Método para buscar un departamento por codigo */
 	@GetMapping("/departamentos/{id}")
-	public Departamentos buscarDepartamentosId(@PathVariable(name = "codigo") Long codigo) {
+	public Departamentos buscarDepartamentosId(@PathVariable(name = "id") Long codigo) {
 		return departamentosServiceImpl.buscarDepartamentosId(codigo);
 
 	}
 
 	/** Método para eliminar un departamento */
 	@PutMapping("/departamentos/{id}")
-	public Departamentos actualizarDepartamento(@PathVariable(name = "codigo") Long codigo,
+	public Departamentos actualizarDepartamento(@PathVariable(name = "id") Long codigo,
 			@RequestBody Departamentos departamentos) {
 		/** Se definen instancias del tipo Departamentos */
 		Departamentos departamento_a_actualizar = new Departamentos();
@@ -77,7 +77,7 @@ public class DepartamentosController {
 
 	/** Método para eliminar un departamento */
 	@DeleteMapping("/departamentos/{id}")
-	public void eliminarDepartamento(@PathVariable(name = "codigo") Long codigo) {
+	public void eliminarDepartamento(@PathVariable(name = "id") Long codigo) {
 		departamentosServiceImpl.eliminarDepartamento(codigo);
 		System.out.println("Departamento eliminado con exito.");
 	}

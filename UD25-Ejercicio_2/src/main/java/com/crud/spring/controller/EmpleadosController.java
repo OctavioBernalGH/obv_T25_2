@@ -57,13 +57,13 @@ public class EmpleadosController {
 
 	/** Método para buscar un empleado por DNI */
 	@GetMapping("/empleados/{id}")
-	public Empleados buscarEmpleadoId(@PathVariable (name = "dni") String dni) {
+	public Empleados buscarEmpleadoId(@PathVariable (name = "id") String dni) {
 		return empleadosServiceImpl.buscarEmpleadoId(dni);
 	}
 
 	/** Método para buscar un empleado por DNI y modificar el empleado */
 	@PutMapping("/empleados/{id}")
-	public Empleados actualizarEmpleado(@PathVariable(name = "dni") String dni, @RequestBody Empleados empleados) {
+	public Empleados actualizarEmpleado(@PathVariable(name = "id") String dni, @RequestBody Empleados empleados) {
 		/** Se crean instancias de empleado */
 		Empleados empleados_a_actualizar = new Empleados();
 		Empleados empleados_ya_actualizados = new Empleados();
@@ -82,7 +82,7 @@ public class EmpleadosController {
 
 	/** Método para eliminar el empleado mediante el DNI */
 	@DeleteMapping("/empleados/{id}")
-	public void eliminarEmpleado(@PathVariable(name = "dni") String dni) {
+	public void eliminarEmpleado(@PathVariable(name = "id") String dni) {
 		empleadosServiceImpl.eliminarEmpleado(dni);
 	}
 }
