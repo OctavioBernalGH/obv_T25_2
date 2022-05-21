@@ -35,7 +35,7 @@ Este ejercicio ha sido realizado por los miembros del equipo 1. Dicho equipo est
     <img src="https://user-images.githubusercontent.com/103035621/169650398-a6a9164f-31a8-494a-b6c3-e12d9d036ef1.png">
 </p>
 
-Para proseguir se crearán dos entidades, la entidad empleados y la entidad departamentos, para ello se crearán dos clases en el paquete DTO. El código de la clase empleados será el mostrado a continuación:
+<p align="justify">Para proseguir se crearán dos entidades, la entidad empleados y la entidad departamentos, para ello se crearán dos clases en el paquete DTO. El código de la clase empleados será el mostrado a continuación:</p>
 
 ```java
 package com.crud.spring.dto;
@@ -172,7 +172,7 @@ public class Empleados {
 
 ```
 
-Es muy importante a la hora de crear el código verificar las anotaciones necesarias para la aplicación. En este caso se utilizan las anotaciones "entity" y "table" para decir al programa que esta clase representa una entidad y que está asociada a la tabla 'x'. También se utiliza la anotación "Column" para realizar el mapeo entre columna/atributo. El siguiente código a visualziar es el de la entidad "departamentos".
+<p align="justify">Es muy importante a la hora de crear el código verificar las anotaciones necesarias para la aplicación. En este caso se utilizan las anotaciones "entity" y "table" para decir al programa que esta clase representa una entidad y que está asociada a la tabla 'x'. También se utiliza la anotación "Column" para realizar el mapeo entre columna/atributo. El siguiente código a visualziar es el de la entidad "departamentos".</p>
 
 ```java
 package com.crud.spring.dto;
@@ -304,9 +304,9 @@ public class Departamentos {
 
 ```
 
-A diferencia de la otra clase en esta se utiliza la etiqueta "JsonIgnore" para eliminar la recursividad. En esta entidad vendrá la etiqueta "OneToMany" puesto que la 'N' está en el lado de empleados.
+<p align="justify">A diferencia de la otra clase en esta se utiliza la etiqueta "JsonIgnore" para eliminar la recursividad. En esta entidad vendrá la etiqueta "OneToMany" puesto que la 'N' está en el lado de empleados.</p>
 
-El siguiente paso será crear el DAO. Para ello hay que dirigirse al paquete DAO y crear dos interfaces, una llamada EmpleadosDAO y la otra DepartamentosDAO:
+<p align="justify">El siguiente paso será crear el DAO. Para ello hay que dirigirse al paquete DAO y crear dos interfaces, una llamada EmpleadosDAO y la otra DepartamentosDAO:</p>
 
 ```java
 package com.crud.spring.dao;
@@ -327,7 +327,7 @@ public interface EmpleadosDAO extends JpaRepository<Empleados, String>{
 }
 ```
 
-Ambas interfaces heredan la clase JpaRepository para poder utilizar los métodos predefinidos en JPA para el acceso a la base de datos y las sentencias propias de Jpa. En el siguiente fragmento de código se podrá observar el mismo funcionamiento:
+<p align="justify">Ambas interfaces heredan la clase JpaRepository para poder utilizar los métodos predefinidos en JPA para el acceso a la base de datos y las sentencias propias de Jpa. En el siguiente fragmento de código se podrá observar el mismo funcionamiento:</p>
 
 ```java
 package com.crud.spring.dao;
@@ -349,7 +349,7 @@ public interface DepartamentosDAO extends JpaRepository<Departamentos, Long>{
 }
 ```
 
-Una vez finalizada la capa DAO se tendrán que crear dos interfaces más en la capa Services, dichas interfaces definirán la cabecera de los métodos que se utilizarán a lo largo del programa. A continuación se muestra el código de la interfaz 'EmpleadosService'.
+<p align="justify">Una vez finalizada la capa DAO se tendrán que crear dos interfaces más en la capa Services, dichas interfaces definirán la cabecera de los métodos que se utilizarán a lo largo del programa. A continuación se muestra el código de la interfaz 'EmpleadosService'.</p>
 
 ```java
 package com.crud.spring.services;
@@ -389,7 +389,7 @@ public interface EmpleadosService {
 }
 ```
 
-Para acabar el tema de las interfaces se realizará el mismo procedimiento en la interfaz 'DepartamentosService'.
+<p align="justify">Para acabar el tema de las interfaces se realizará el mismo procedimiento en la interfaz 'DepartamentosService'.</p>
 
 ```java
 package com.crud.spring.services;
@@ -431,9 +431,7 @@ public interface DepartamentosService {
 
 ```
 
-Como se podrá observar en todo el código es muy importante el uso de comentarios puesto que cada ejercicio realizado es una 'plantilla' en caso de necesidad. Es un buen hábito.
-
-Continuando con el programa, lo siguiente será implementar las interfaces creadas en las clases 'EmpleadosServiceImpl' y 'DepartamentosServiceImpl'.
+<p align="justify">Como se podrá observar en todo el código es muy importante el uso de comentarios puesto que cada ejercicio realizado es una 'plantilla' en caso de necesidad. Es un buen hábito. Continuando con el programa, lo siguiente será implementar las interfaces creadas en las clases 'EmpleadosServiceImpl' y 'DepartamentosServiceImpl'.</p>
 
 ```java
 package com.crud.spring.services;
@@ -500,7 +498,7 @@ public class EmpleadosServiceImpl implements EmpleadosService {
 
 ``` 
 
-En ambas clases se utilizan los métodos de las interfaces de forma obligatoria. Muy importante el uso de la anotación @Service en ambas clases puesto que sin esta anotación la aplicación no funcionará, dicha anotación es utilizada para construir una clase de Servicio que habitualmente se conecta a varios repositorios.
+<p align="justify">En ambas clases se utilizan los métodos de las interfaces de forma obligatoria. Muy importante el uso de la anotación @Service en ambas clases puesto que sin esta anotación la aplicación no funcionará, dicha anotación es utilizada para construir una clase de Servicio que habitualmente se conecta a varios repositorios.</p>
 
 ```java
 package com.crud.spring.services;
@@ -566,7 +564,7 @@ public class DepartamentosServiceImpl implements DepartamentosService {
 
 ```
 
-Una vez este finalizado el DTO, DAO y service se procederá a desarrollar la capa Controllers. En este paquete se ubicarán los controladores de Empleados y Departamentos, para ello se crean dos clases.
+<p align="justify">Una vez este finalizado el DTO, DAO y service se procederá a desarrollar la capa Controllers. En este paquete se ubicarán los controladores de Empleados y Departamentos, para ello se crean dos clases.</p>
 
 ```java
 package com.crud.spring.controller;
@@ -660,7 +658,7 @@ public class EmpleadosController {
 
 ```
 
-Como se podrá observar en el siguiente fragmento de código, se da uso a la anotación @RestController para indicar al aplicativo Spring que esta clase es un controllador del tipo rest, y también la anotación @RequestMapping("/api") para indicarle que las funcionalidades colgarán de la ruta del servidor:puerto/api/funcionalides. 
+<p align="justify">Como se podrá observar en el siguiente fragmento de código, se da uso a la anotación @RestController para indicar al aplicativo Spring que esta clase es un controllador del tipo rest, y también la anotación @RequestMapping("/api") para indicarle que las funcionalidades colgarán de la ruta del servidor:puerto/api/funcionalides. </p>
 
 En el siguiente fragmento de código se desarrolla el controlador de Departamentos:
 
@@ -752,7 +750,7 @@ public class DepartamentosController {
 
 ```
 
-Ahora que está el aplicativo Java terminado se procederá a crear el Script con las creación de tablas y con inserts para verificar su correcto funcionamiento con la herramienta postman. Para ello se añadirá el siguiente código en el fichero data.sql ubicado en la carpeta src:
+<p align="justify">Ahora que está el aplicativo Java terminado se procederá a crear el Script con las creación de tablas y con inserts para verificar su correcto funcionamiento con la herramienta postman. Para ello se añadirá el siguiente código en el fichero data.sql ubicado en la carpeta src:</p>
 
 ```sql
 DROP table IF EXISTS `empleados`;
@@ -786,3 +784,41 @@ insert into `empleados` (dni, nombre, apellidos, empleado_dni) VALUES ('22222s',
 insert into `empleados` (dni, nombre, apellidos, empleado_dni) VALUES ('33333a', 'paquito', 'pereson', 4);
 insert into `empleados` (dni, nombre, apellidos, empleado_dni) VALUES ('44444b', 'paca', 'peresona', 5);
 ```
+
+<p align="justify">A continuación se procederá a la verificación de los endpoints del aplicativo, para ello se ha de abrir postman y utilizar las sentencias HTTP. La primera de ellas será GET, se verificará el funcionamiento del listado de empleados y departamentos. En la siguiente imagen se podrá ver el listado de empleados asociados a un departamento.</p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652014-7eca3a7c-05e8-4c14-a012-01ebcf684ea7.PNG">
+</p>
+
+<p align="justify">A continuación se muestran un empleado en concreto filtrando por el identificador que en este caso será el DNI para ello se utilizará la sentencia HTTP GET:</p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652115-5c8b62fe-9322-4415-9aac-ae3a249f542c.PNG">
+</p>
+
+<p align="justify">Se realiza el mismo procedimiento con los departamentos, el identificador del departamento corresponde al código de departamento:</p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652169-88e92b4f-d2db-4445-aad8-a442bdd57551.PNG">
+</p>
+
+<p align="justify">El siguiente paso será verificar la funcionalidad de modificar un empleado mediante el DNI:</p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652256-d6e19dac-798d-418a-ac5f-aaf747bf800c.PNG">
+</p>
+
+Se realiza de nuevo el mismo procedimiento pero con los departamentos:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652283-56a87ed9-95fb-4e29-93d3-8c8abd2002e2.PNG">
+</p>
+
+<p align="justify">Por último se mostrará la creación de un nuevo empleado asociado a un departamento, para ello se utilizará la sentencia HTTP POST acompañada del endpoint. En la siguiente imagen se podrá visualizar el utilizado con empleados.</p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/103035621/169652319-6964ca35-9383-4935-a6d8-fe9358664d33.PNG">
+</p>
+
+<p align="justify">Como se pueden observar en las imagenes es muy importante el uso correcto de las anotaciones para una correcta relación entre entidades. Lo primero de todo siempre es plantear el ejercicio de forma estructurada, definir las herramientas a utilizar y tener claro en todo momento el significado de las anotaciones. Este ejercicio ha servidor para practicar las relaciones entre entidades, la estructura mediante DAO, DTO, Controller y Service y el uso de Jpa en el DAO.</p>
