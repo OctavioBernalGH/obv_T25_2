@@ -1,9 +1,9 @@
 <table>
- <tr>
-    <td width="100px"><img src="https://github.com/OctavioBernalGH/BTC_Reus2022_UD16/blob/main/dou_logo.png" alt="Team DOU"/></td>
-  <td width="1000px"> <h2> Spring + JPA + H2 + Maven Ejercicio 2 Unidad 25 </h2> </td>
-  
- </tr>
+<tr>
+<td width="100px"><img src="https://user-images.githubusercontent.com/103035621/170483040-a88d598b-145b-4903-accb-948ceff05811.png" alt="Team DOU"/></td>
+<td width="1100px"> <h2>MSKA: Spring + JPA + MYSQL UD25_Ejercicio-2</h2> </td>
+
+</tr>
 </table>
 
 [![Java](https://img.shields.io/badge/Java-FrontEnd-informational)]()
